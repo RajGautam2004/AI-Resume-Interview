@@ -1,0 +1,47 @@
+{
+  "name": "interview-face-proctoring-advanced",
+  "version": "2.0.0",
+  "description": "Advanced AI-powered proctoring system with authentication, analytics, and admin dashboard",
+  "main": "server/server-advanced.js",
+  "type": "module",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "dev:frontend": "vite",
+    "build:frontend": "vite build",
+    "preview": "vite preview",
+    "dev:backend": "node server/server-advanced.js",
+    "dev:basic": "node server/server.js",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:basic:all": "concurrently \"npm run dev:frontend\" \"npm run dev:basic\"",
+    "start": "node server/server-advanced.js",
+    "start:basic": "node server/server.js",
+    "test": "node test-api.js",
+    "test:advanced": "node test-advanced.js",
+    "docker:build": "docker build -t proctoring-system .",
+    "docker:run": "docker run -p 3000:3000 -p 5000:5000 proctoring-system",
+    "docker:compose": "docker-compose up"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-webcam": "^7.1.0",
+    "@tensorflow/tfjs": "^4.11.0",
+    "@tensorflow-models/face-landmarks-detection": "^0.0.7",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.1.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "concurrently": "^8.2.0"
+  },
+  "optionalDependencies": {
+    "mongoose": "^7.5.0",
+    "pg": "^8.11.2"
+  }
+}
+
